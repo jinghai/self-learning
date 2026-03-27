@@ -22,7 +22,7 @@ Self-Learning 是一个 Agent Skills 规范兼容的技能，旨在帮助 AI Age
 ### 方法1：使用 Skills CLI
 
 ```bash
-npx skills add <your-github-username>/agent-skills/self-learning
+npx skills add jinghai/agent-skills/self-learning
 ```
 
 ### 方法2：手动安装
