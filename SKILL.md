@@ -76,6 +76,8 @@ metadata:
 3. **优先使用专用技能而非通用方法** — 有Obsidian CLI就不用文件写入
 4. **执行外部操作（保存/发送/删除）前先确认目标位置正确**
 5. **非主通道（微信/webchat）生成的Markdown内容不可信** — 必须读取文件验证格式，特别是代码块（反引号可能被转义或插入控制字符）
+6. **Windows PowerShell中用分号`;`连接命令，不用`&&`** — PowerShell 5.1不支持bash风格的`&&`
+7. **写PowerShell脚本(.ps1)必须用qclaw-text-file技能** — 确保正确的utf-8-sig编码和BOM
 
 ---
 

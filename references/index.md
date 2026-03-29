@@ -7,9 +7,18 @@
 | 规则 | 详细案例 |
 |------|---------|
 | 优先使用专用技能而非通用方法 | [2026-03-27 Obsidian笔记保存](experiences.md) |
+| 写PowerShell脚本必须用qclaw-text-file技能 | [2026-03-30 PowerShell脚本写入](experiences.md) |
 
 ## 操作验证
 
 | 规则 | 详细案例 |
 |------|---------|
 | 执行操作后必须用可靠方式验证结果 | [2026-03-27 Obsidian笔记保存](experiences.md) |
+
+## Windows/PowerShell
+
+| 规则 | 详细案例 |
+|------|---------|
+| PowerShell中用分号`;`连接命令，不用`&&` | [2026-03-30 PowerShell命令连接符](experiences.md) |
+| 写.ps1脚本必须用qclaw-text-file技能 | [2026-03-30 PowerShell脚本写入](experiences.md) |
+

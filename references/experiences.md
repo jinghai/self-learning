@@ -1,5 +1,39 @@
 ---
 
+## [2026-03-30] PowerShell中不支持`&&`命令连接符
+
+- **错误**：在Windows PowerShell中使用`&&`连接多个命令（如`cd xxx && git status`），报错"&&在此版本中不是有效的语句分隔符"
+- **原因**：
+  1. PowerShell和CMD/bash语法不同，PowerShell使用分号`;`或管道`|`连接命令
+  2. `&&`是bash语法，PowerShell 7以下版本不支持
+  3. 习惯了bash语法，忘记当前环境是Windows PowerShell
+- **修正**：
+  - PowerShell中用分号`;`连接命令：`cd xxx; git status`
+  - 或使用`-and`逻辑操作符：`command1 -and command2`
+  - PowerShell 7+支持`&&`，但默认Windows PowerShell 5.1不支持
+- **规则**：**Windows PowerShell中用分号`;`连接命令，不用`&&`**
+- **场景**：当在Windows PowerShell环境中执行多命令时
+- **已固化到精简规则**：是
+
+---
+
+## [2026-03-30] 写PowerShell脚本必须用qclaw-text-file技能
+
+- **错误**：用内置write工具直接写.ps1文件，结果文件编码错误导致PowerShell无法正确解析中文（报"字符串缺少结束符"等错误）
+- **原因**：
+  1. 内置write工具硬编码utf-8无BOM
+  2. PowerShell对.ps1文件编码有特殊要求（utf-8-sig或utf-8 with BOM）
+  3. 直接用命令行传包含中文和引号的内容给PowerShell脚本也会出现转义问题
+- **修正**：
+  - 使用qclaw-text-file技能的write_file.py脚本写.ps1文件
+  - .ps1文件会自动使用utf-8-sig编码（带BOM）
+  - 复杂脚本应先写文件再执行，不要在命令行中直接嵌入脚本内容
+- **规则**：**写PowerShell脚本文件必须用qclaw-text-file技能，不能用内置write工具**
+- **场景**：当需要创建或修改.ps1 PowerShell脚本文件时
+- **已固化到精简规则**：是
+
+---
+
 ## [2026-03-28] 通过微信通道写入笔记时Markdown代码块格式会被破坏
 
 - **错误**：通过微信通道（weixin）让Agent创建Obsidian笔记时，Markdown代码块被写成了三个反斜杠加隐藏控制字符（0x08退格符），导致代码块无法正常渲染
