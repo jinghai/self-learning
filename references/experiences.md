@@ -56,6 +56,24 @@
 
 ---
 
+## [2026-03-31] 操作Obsidian前必须先确认vault真实路径
+
+- **错误**：用 write 工具把笔记写到了 `C:\Users\yneo\Documents\Obsidian Vault\`，但真实 vault 是 `C:\Users\yneo\Documents\我的笔记\`，导致笔记在 Obsidian 中完全看不到
+- **原因**：没有确认 vault 路径，凭文件夹名字猜测，把猜测当成事实沿用
+- **修正**：
+  - 第一步必须执行 `obsidian vault info=path` 确认真实路径
+  - 所有笔记统一用 `obsidian create` 创建，禁止用 write 工具直接写文件
+  - `obsidian create` 会自动写到正确的 vault，不会出错
+- **规则**：
+  1. 操作任何专用工具前，必须先读对应的 SKILL.md
+  2. 禁止猜测/编造路径，不知道就先查（`obsidian vault info=path`）
+  3. 禁止用 write 工具创建 Obsidian 笔记，必须用 `obsidian create`
+  4. **每次保存笔记后必须用 `obsidian files` 或 `obsidian read` 验证笔记存在**
+- **场景**：任何涉及 Obsidian 笔记创建/编辑的操作
+- **已固化到精简规则**：是
+
+---
+
 ## [2026-03-29] 执行任务必须持续监控直到有最终结果
 
 - **错误**：执行定时任务测试时，发起任务后没有持续监控，每次都等用户追问才检查结果

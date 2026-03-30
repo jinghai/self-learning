@@ -78,6 +78,9 @@ metadata:
 5. **非主通道（微信/webchat）生成的Markdown内容不可信** — 必须读取文件验证格式，特别是代码块（反引号可能被转义或插入控制字符）
 6. **Windows PowerShell中用分号`;`连接命令，不用`&&`** — PowerShell 5.1不支持bash风格的`&&`
 7. **写PowerShell脚本(.ps1)必须用qclaw-text-file技能** — 确保正确的utf-8-sig编码和BOM
+8. **禁止用 write 工具创建Obsidian笔记** — 必须用 `obsidian create path="Inbox/xxx.md"`，write工具需要绝对路径且容易写错位置
+9. **整理笔记标准流程**：搜索内容 → `obsidian create` 创建 → `obsidian files` 验证存在 → 完成
+10. **做事没有结果前不能结束** — 异步任务必须持续监控直到明确的 success 或 error
 
 ---
 
@@ -89,6 +92,14 @@ metadata:
 - [ ] 操作完成后是否需要验证？→ 必须验证
 - [ ] 经验库中是否有相关经验？→ 先查阅
 - [ ] 操作是否可逆？→ 不可逆操作需额外确认
+
+### 📝 整理笔记专项检查清单
+
+- [ ] 用搜索工具获取内容（ProSearch / web_fetch）
+- [ ] 用 `obsidian create path="Inbox/YYYY-MM-DD-标题.md"` 创建笔记
+- [ ] 笔记内容以 YAML frontmatter 开头（title、created、tags、type）
+- [ ] 用 `obsidian files` 验证笔记出现在 vault 文件列表中
+- [ ] **禁止用 write 工具写 Obsidian 笔记**
 
 ## 参考资料
 
