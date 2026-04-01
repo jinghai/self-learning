@@ -81,6 +81,8 @@ metadata:
 8. **禁止用 write 工具创建Obsidian笔记** — 必须用 `obsidian create path="Inbox/xxx.md"`，write工具需要绝对路径且容易写错位置
 9. **整理笔记标准流程**：搜索内容 → `obsidian create` 创建 → `obsidian files` 验证存在 → 完成
 10. **做事没有结果前不能结束** — 异步任务必须持续监控直到明确的 success 或 error
+11. **Obsidian笔记创建前必须确认vault路径** — 用 `obsidian vault info=path` 查询真实路径，不要猜测
+12. **所有笔记保存后必须验证存在性** — 用 `obsidian files` 检查笔记是否出现在vault中
 
 ---
 

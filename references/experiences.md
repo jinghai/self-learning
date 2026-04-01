@@ -74,6 +74,42 @@
 
 ---
 
+## [2026-04-01] Obsidian笔记排版格式问题
+
+- **问题**：用 `obsidian create` 创建的笔记排版格式不规范，缺少"一句话总结"、"核心要点"、"Actionable建议"等标准化模块
+- **原因**：没有按 note-summarizer 技能的摘要格式模板生成内容
+- **修正**：按照 note-summarizer 技能中的"摘要格式"模板重新生成，确保包含：
+  - 一句话总结
+  - 核心要点（3-5条）
+  - Actionable 建议
+  - 原文/参考
+- **规则**：创建笔记时必须按 note-summarizer 技能的摘要格式模板生成
+- **场景**：创建/整理 Obsidian 笔记
+- **已固化到精简规则**：是
+
+## [2026-03-31] Obsidian Vault路径必须先确认
+
+- **错误**：始终把笔记写到 `C:\Users\yneo\Documents\Obsidian Vault\`，但真实 vault 是 `C:\Users\yneo\Documents\我的笔记\`，导致笔记在 Obsidian 中完全看不到
+- **原因**：
+  1. 没有确认 vault 路径，凭文件夹名字猜测，把猜测当成事实沿用
+  2. 记忆错误：以为Obsidian默认位置是"Obsidian Vault"文件夹
+  3. 没有养成"先查询再行动"的习惯
+- **修正**：
+  - 第一步必须执行 `obsidian vault info=path` 确认真实路径
+  - 所有笔记统一用 `obsidian create` 创建，禁止用 write 工具直接写文件
+  - `obsidian create` 会自动写到正确的 vault，不会出错
+  - 保存后必须用 `obsidian files` 或 `obsidian read` 验证笔记存在
+- **规则**：
+  1. 操作任何专用工具前，必须先读对应的 SKILL.md
+  2. 禁止猜测/编造路径，不知道就先查（`obsidian vault info=path`）
+  3. **禁止用 write 工具创建 Obsidian 笔记，必须用 `obsidian create`**
+  4. **每次保存笔记后必须用 `obsidian files` 或 `obsidian read` 验证笔记存在**
+- **场景**：任何涉及 Obsidian 笔记创建/编辑的操作
+- **已固化到精简规则**：是
+- **这是重复错误**：否（首次记录）
+
+---
+
 ## [2026-03-29] 执行任务必须持续监控直到有最终结果
 
 - **错误**：执行定时任务测试时，发起任务后没有持续监控，每次都等用户追问才检查结果

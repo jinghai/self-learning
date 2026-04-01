@@ -8,12 +8,21 @@
 |------|---------|
 | 优先使用专用技能而非通用方法 | [2026-03-27 Obsidian笔记保存](experiences.md) |
 | 写PowerShell脚本必须用qclaw-text-file技能 | [2026-03-30 PowerShell脚本写入](experiences.md) |
+| **禁止用 write 工具创建 Obsidian 笔记** | [2026-03-31 Obsidian路径错误](experiences.md) |
 
 ## 操作验证
 
 | 规则 | 详细案例 |
 |------|---------|
 | 执行操作后必须用可靠方式验证结果 | [2026-03-27 Obsidian笔记保存](experiences.md) |
+| 每次保存笔记后必须用 `obsidian files` 验证笔记存在 | [2026-03-31 Obsidian路径错误](experiences.md) |
+
+## Obsidian使用
+
+| 规则 | 详细案例 |
+|------|---------|
+| 操作Obsidian前必须先确认vault真实路径 | [2026-03-31 Obsidian路径错误](experiences.md) |
+| 创建Obsidian笔记必须包含YAML frontmatter | [2026-03-27 Obsidian笔记属性](experiences.md) |
 
 ## Windows/PowerShell
 
