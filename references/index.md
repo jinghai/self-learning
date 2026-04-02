@@ -23,6 +23,7 @@
 |------|---------|
 | 操作Obsidian前必须先确认vault真实路径 | [2026-03-31 Obsidian路径错误](experiences.md) |
 | 创建Obsidian笔记必须包含YAML frontmatter | [2026-03-27 Obsidian笔记属性](experiences.md) |
+| 创建Obsidian笔记必须包含标准化的格式标题 | [2026-04-02 Obsidian笔记格式标题](experiences.md) |
 
 ## Windows/PowerShell
 

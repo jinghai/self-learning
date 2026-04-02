@@ -83,6 +83,7 @@ metadata:
 10. **做事没有结果前不能结束** — 异步任务必须持续监控直到明确的 success 或 error
 11. **Obsidian笔记创建前必须确认vault路径** — 用 `obsidian vault info=path` 查询真实路径，不要猜测
 12. **所有笔记保存后必须验证存在性** — 用 `obsidian files` 检查笔记是否出现在vault中
+13. **创建Obsidian笔记必须包含标准化的格式标题** — 必须包含 `## 一句话总结`、`## 核心要点`、`## Actionable 建议`、`## 原文/参考` 等标题
 
 ---
 
